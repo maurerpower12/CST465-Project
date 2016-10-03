@@ -1,0 +1,39 @@
+﻿body {
+    background-color: #EBEBEB;
+}
+h1 {
+    font-family: 'Lobster',serif; color: black; font-size: 55px;
+    text-decoration: underline;
+    text-align: center;
+    background-color: #3A8DEB;
+    margin: 0;
+    padding: 0px;
+    width: 100%;
+}
+
+#logo {
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid #251BB8;
+}
+
+#hobbies {
+    color: #3A8DEB;
+    font-weight: bolder;
+}
+
+.color_me {
+    border: 1px solid #EDB476;
+}
+
+footer {
+    font-size: 10px;
+}
+
+#contact_footer {
+        text-align: center;
+        background-color: #3A8DEB;
+        bottom: 0px;
+        margin-bottom: 0px;
+}

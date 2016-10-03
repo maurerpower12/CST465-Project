@@ -1,0 +1,6 @@
+\\Mac\Home\Documents\CST465\CST465\bin\CST465.dll.config
+\\Mac\Home\Documents\CST465\CST465\bin\CST465.dll
+\\Mac\Home\Documents\CST465\CST465\bin\CST465.pdb
+\\Mac\Home\Documents\CST465\CST465\obj\Debug\CST465.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\CST465\CST465\obj\Debug\CST465.dll
+\\Mac\Home\Documents\CST465\CST465\obj\Debug\CST465.pdb
