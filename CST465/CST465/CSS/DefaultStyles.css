@@ -1,0 +1,83 @@
+﻿body {
+    margin: 0;
+}
+
+/* Footer */
+
+footer {
+    padding: 100px 0;
+    margin-left: 26%;
+    clear: both;
+}
+
+header {
+    margin-left: 26%;
+}
+main {
+    float: right;
+    margin-left: 26%;
+    width: 75%;
+}
+ul {
+    list-style: none !important;
+    list-style-type: none; /*get rid of bullet point things*/
+}
+ /*Footer icon color*/
+.cc_ic {
+    color: black;
+}
+ .text-center {
+     text-align: center;
+ }
+
+ .text-muted {
+     color:#777;
+ }
+ .list-inline{
+     padding-left:0;
+     margin-left:-5px;
+     list-style:none
+ }
+ .list-inline>li {
+     display:inline-block;
+     padding-right:5px;
+     padding-left:5px
+
+ }
+
+
+ /*CSS for Side Nav Bar*/
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-left: 0 !important;
+    z-index: 99;
+    top: 0px;
+}
+nav ul li a {
+    list-style: none !important;
+    list-style-type: none; /*get rid of bullet point things*/
+    padding-left: 4px !important;
+}
+.uxSideNav {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.uxSideNav.active {
+    background-color: #3A8DEB;
+    color: white;
+}
+
+.uxSideNav:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}

@@ -65,10 +65,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.html" />
-    <Content Include="Contact.html" />
+    <Content Include="CSS\DefaultStyles.css" />
+    <Content Include="HTML\About.html" />
+    <Content Include="HTML\Assignment1.html" />
+    <Content Include="HTML\Contact.html" />
     <Content Include="Global.asax" />
-    <Content Include="PageStyles.css" />
+    <Content Include="CSS\PageStyles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

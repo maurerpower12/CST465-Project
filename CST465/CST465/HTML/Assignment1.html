@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Assignment 1 Page</title>
+    <!--The below link allows for the icons that are used in the footer!--> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+    <link href="../CSS/DefaultStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="uxSideNavUl">
+        <a class="active uxSideNav" href="Assignment1.html" >Home</a>
+        <a href="Contact.html" class="uxSideNav">Contact</a>
+        <a href="About.html" class="uxSideNav">About</a>
+        <ul>
+            <li><a href="https://www.asp.net/community/microsoft-blogs" class="uxSideNav">Blog 1</a></li>
+            <li><a href="http://dotnetblogengine.net/" class="uxSideNav">Blog 2</a></li>
+            <li><a href="https://blog.newrelic.com/2014/03/12/20-net-developers-follow-online/" class="uxSideNav">Blog 3</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1> Hello! </h1>
+    </header>
+
+
+    <main>
+        <article>
+            <h3>Main Content goes here</h3>
+            <p>
+                Some filler text would also go here.
+            </p>
+        </article>
+        <section>
+            <h3>Section Content goes here</h3>
+            <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
+        </section>
+        <form action="http://www.oit.edu/cst465" method="POST">
+            <!--1.-->
+            <label for="uxName">Name: </label>
+            <input type="text" id="uxName" name="Name"><br><br>
+
+            <!--2.-->
+            <label for="uxEmailAddress">Email Address: </label>
+            <input type="text" id="uxEmailAddress" name="EmailAddress"><br><br>
+
+            <!--3.-->
+            <label for="uxUserType">Type of User: </label>
+            <select id="uxUserType" name="UserType">
+                <option value="faculty">Faculty/Staff</option>
+                <option value="student">Student</option>
+            </select><br><br>
+
+            <!--4.-->
+            <label for="uxHobby">Hobby: </label>
+            <input type="text" id="uxHobby" name="Hobby"><br><br>
+
+            <!--5.-->
+            <label for="uxBand">Band: </label>
+            <input type="text" id="uxBand" name="Band"><br><br>
+
+            <!--6.-->
+            <label for="uxBiography">Biography: </label>
+            <input type="text" id="uxBiography" name="Biography"><br><br>
+
+            <!--7.-->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Prefix</th>
+                        <th>Course Number</th>
+                        <th>Course Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="uxCoursePrefix" name="CoursePrefix"></td>
+                        <td><input type="text" id="uxCourseNumber" name="CourseNumber"></td>
+                        <td><input type="text" id="uxCourseDescription" name="CourseDescription"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+
+            <!--8.-->
+            <input type="hidden" id="uxNickname" name="Nickname" value="Lebron James">
+
+            <!--9.-->
+            <button type="submit">Submit Input</button>
+         </form>
+</main>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <h3 style="color: #3A8DEB; font-family: 'Arial'; ">
+                        <strong>Joseph Maurer</strong>
+                    </h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook fa-fw fa-3x cc_ic"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/"><i class="fa fa-instagram fa-fw fa-3x cc_ic"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/"><i class="fa fa-github fa-fw fa-3x cc_ic"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; 2016</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>
