@@ -10,3 +10,9 @@
 \\Mac\Home\Documents\CST465-Project\CST465\CST465\obj\Debug\CST465.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\CST465-Project\CST465\CST465\obj\Debug\CST465.dll
 \\Mac\Home\Documents\CST465-Project\CST465\CST465\obj\Debug\CST465.pdb
+Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST465.dll.config
+Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST465.dll
+Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST465.pdb
+Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.csprojResolveAssemblyReference.cache
+Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.dll
+Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.pdb

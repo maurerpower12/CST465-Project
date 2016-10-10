@@ -1,0 +1,115 @@
+﻿@media only screen and (min-width: 800px) {
+    nav {
+        width: 25%;
+        max-width: 300px;
+        float: left;
+    }
+    main {
+        width: 75%;
+        float: left;
+    }
+}
+
+html {
+    font-size: 16px;
+    font-family: "Verdana", Geneva, sans-serif;
+}
+ul {
+    list-style: none !important;
+    list-style-type: none; /*get rid of bullet point things*/
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+nav ul li {
+    border: solid 5px #EBEBEB; /*add a border around the li*/ 
+    background: linear-gradient(to bottom, #cdcdcd, #ffffff);
+    padding: 1px 0 1px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    text-combine-upright: #fff;
+    padding: 100px 0;
+    /*margin-left: 26%;*/
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 9999;
+}
+
+/*Footer icon color*/
+.cc_ic {
+    color: #777;
+}
+ .text-center {
+     text-align: center;
+ }
+
+ .text-muted {
+     color: #ffffff;
+ }
+ .list-inline{
+     padding-left:0;
+     margin-left:-5px;
+     list-style:none
+ }
+ .list-inline>li {
+     display:inline-block;
+     padding-right:5px;
+     padding-left:5px
+
+ }
+
+ /*the following is to format the main*/
+header {
+    margin-left: 27%;
+}
+main {
+    float: right;
+    margin-left: 27%;
+    width: 75%;
+    margin-bottom: 50px;
+}
+
+
+/*CSS for Side Nav Bar*/
+/*nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-left: 0 !important;
+    z-index: 99;
+    top: 0px;
+    left: 0px;
+}*/
+nav ul li a {
+    list-style: none !important;
+    list-style-type: none; /*get rid of bullet point things*/
+    padding-left: 4px !important;
+}
+.uxSideNav {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.uxSideNav.active {
+    background-color: #3A8DEB;
+    color: white;
+}
+
+.uxSideNav:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
