@@ -16,3 +16,8 @@ Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST46
 Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.csprojResolveAssemblyReference.cache
 Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.dll
 Z:\downloads\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.pdb
+E:\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST465.dll.config
+E:\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST465.dll
+E:\CST465-Project-master\CST465-Project-master\CST465\CST465\bin\CST465.pdb
+E:\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.dll
+E:\CST465-Project-master\CST465-Project-master\CST465\CST465\obj\Debug\CST465.pdb

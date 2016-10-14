@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.Master.cs" Inherits="CST465.WebForms.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        <nav>
+            <ul>
+                <li><a href="https://www.asp.net/community/microsoft-blogs" class="uxSideNav">Blog 1</a></li>
+                <li><a href="http://dotnetblogengine.net/" class="uxSideNav">Blog 2</a></li>
+                <li><a href="https://blog.newrelic.com/2014/03/12/20-net-developers-follow-online/" class="uxSideNav">Blog 3</a></li>
+            </ul>
+        </nav>
+        <main>
+                <asp:ContentPlaceHolder ID="main" runat="server">
+                </asp:ContentPlaceHolder>
+        </main>
+
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

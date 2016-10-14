@@ -58,12 +58,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WebForms\RequiredTextBox.ascx" />
+    <Content Include="WebForms\ValidatedFormOutput.aspx" />
+    <Content Include="WebForms\ValidationForm.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="WebForms\Template.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\DefaultStyles.css" />
@@ -76,12 +80,56 @@
     <Content Include="CSS\PageStyles.css" />
     <Content Include="HTML\Layout.html" />
     <Content Include="Web.config" />
+    <Content Include="WebForms\Contact.aspx" />
+    <Content Include="WebForms\Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForms\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\RequiredTextBox.ascx.cs">
+      <DependentUpon>RequiredTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\RequiredTextBox.ascx.designer.cs">
+      <DependentUpon>RequiredTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Template.Master.cs">
+      <DependentUpon>Template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Template.Master.designer.cs">
+      <DependentUpon>Template.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ValidatedFormOutput.aspx.cs">
+      <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ValidatedFormOutput.aspx.designer.cs">
+      <DependentUpon>ValidatedFormOutput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\ValidationForm.aspx.cs">
+      <DependentUpon>ValidationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\ValidationForm.aspx.designer.cs">
+      <DependentUpon>ValidationForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
