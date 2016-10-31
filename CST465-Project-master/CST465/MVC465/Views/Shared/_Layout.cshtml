@@ -16,14 +16,16 @@
     <header class="uxHeader">
         <nav class="uxSideNavUl">
             
-            <li><img src="~/Img/houz.png" height="50" width="50" />@Html.ActionLink("Home", "Index", "Home")</li>
+            @*<li><img src="~/Img/houz.png" height="50" width="50" />@Html.ActionLink("Home", "Index", "Home")</li>*@
+            <li><a href="@Url.Action("Index", "Home")"><img src="~/Img/houz.png" style="width: 25px !important; width: 25px !important;" /></a></li>
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
 </nav>
         <div id="uxSidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position: relative; top: 0; left: 0;">&times;</a>
-            <a href="@Url.Action("Index", "Home")"><img src="~/Img/houz.png" height="50" width="50" /></a> 
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li><a href="@Url.Action("Index", "Home")"><img src="~/Img/houz.png" height="30" width="50" style="width:30px !important;"/></a></li>
+            <br /><br />
+            @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
         </div>

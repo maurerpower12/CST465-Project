@@ -4,7 +4,6 @@
 
 body {
     margin-top: 55px;
-    background-color: rgb(228,229,229);
     transition: 0.3s;
 }
 
@@ -63,13 +62,14 @@ li {
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 65px 15px 15px;
     text-decoration: none;
     color: #818181;
     display: flex;
     transition: 0.3s;
     font-size: 36px ! important;
     right: 25px ;
+    align-content: space-between;
 }
 
 .sidenav a:hover{
@@ -78,13 +78,20 @@ li {
 
 .uxOpen { visibility: hidden; }
 
-/*@media screen and (max-height: 450px) {*/
 @media only screen and (max-width: 650px) {
   .sidenav {padding-top: 15px;}
   .uxOpen { visibility:visible; }
    nav { visibility: hidden; }
+   img {width: 100%;}
 }
+@media only screen and (min-width: 650px) {
+    html {background: #A0A1A2;}
+    body {text-align: center; width: 85%;}
+    h1{ font-family: Rockwell; }
+    h2{ font-family: Rockwell; }
+    h3{ font-family: Rockwell; }
 
+}
 .banner {
     width: 100%;
     height:100px;
@@ -94,9 +101,9 @@ li {
     right: 0;
     z-index: -2;
     margin: 0;
-    /*background: -webkit-linear-gradient(bottom left, #34b3a0 0%, #204056 100%);
-    background: linear-gradient(to top right, #34b3a0 0%, #204056 100%);*/
-    background-color: #225470;
+    background: -webkit-linear-gradient(bottom left, #34b3a0 0%, #204056 100%);
+    background: linear-gradient(to top right, #34b3a0 0%, #204056 100%);
+    /*background-color: #225470;*/
     background-size: cover;
     color: rgb(228,229,229);
 }
