@@ -46,8 +46,6 @@ namespace MVC465.Controllers
             {
                 return View(model);
             }
-            
-           
         }
 
         public ActionResult Edit(int id)
@@ -57,8 +55,6 @@ namespace MVC465.Controllers
             
             return View(model);
         }
-
-
 
         [HttpPost]
         public ActionResult Edit(BlogPostModel model)
@@ -80,6 +76,10 @@ namespace MVC465.Controllers
             }
             
         }
-
+        
+        public ActionResult ViewBlog(int id)
+        {
+            return View(data.Get(id));
+        }
     }
 }

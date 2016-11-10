@@ -1,6 +1,7 @@
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\MVC465.dll.config
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\MVC465.dll
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\MVC465.pdb
+\\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\Microsoft.Web.Infrastructure.dll
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\Newtonsoft.Json.dll
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\System.Net.Http.Formatting.dll
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\System.Web.Helpers.dll
@@ -21,6 +22,6 @@
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\System.Web.Webpages.Razor.xml
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\System.Web.Helpers.xml
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\System.Web.Mvc.xml
-\\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.csprojResolveAssemblyReference.cache
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.dll
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.pdb
+\\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.csprojResolveAssemblyReference.cache

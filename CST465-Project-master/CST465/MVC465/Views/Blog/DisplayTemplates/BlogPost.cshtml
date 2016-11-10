@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Blog Post";
+}
+
+@*This will be a prettier editor for your blog post*@
+
+@model BlogPost
+
+<div>
+    <h3>@Model.Title</h3><br />
+    <small>@Model.Timestamp</small> @Model.Author:<br />
+    <div>
+        @Model.Content
+    </div>
+</div>

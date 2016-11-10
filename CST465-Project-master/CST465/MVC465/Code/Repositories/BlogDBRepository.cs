@@ -83,7 +83,6 @@ namespace MVC465.Code.Repositories
                     //Perform your database operations
                     //Initialize the connection object
                     command.Connection = connection;
-                    //command.CommandType = CommandType.Text;
                     command.CommandText = "SELECT * FROM Blog";
                     command.Connection.Open();
 

@@ -86,7 +86,7 @@ li {
 }
 @media only screen and (min-width: 650px) {
     html {background: #A0A1A2;}
-    body {text-align: center; width: 85%;}
+    body { width: 85%;}
     h1{ font-family: Rockwell; }
     h2{ font-family: Rockwell; }
     h3{ font-family: Rockwell; }
