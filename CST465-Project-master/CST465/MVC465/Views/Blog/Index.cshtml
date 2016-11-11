@@ -6,17 +6,15 @@
     ViewBag.Title = "Blog Post";
 }
 <h1>Blog Posts</h1>
-
-
-@*@foreach (BlogPost post in Model)
+<style>
+</style>
+<a id="uxAdd" href="@Url.Action("Add", "Blog")"><img src="~/Img/plus.png" /></a>
+@using (Html.BeginForm())
 {
-    <div style="font-size: 25px;">
-        <a href="@Url.Action("Edit", new { ID = post.ID })"><img src="~/Img/pencil.png" style="width: 25px !important; width: 25px !important;" /></a>
-        <a href="@Url.Action("ViewBlog", new { ID = post.ID })"><img src="~/Img/search-engine.png" style="width: 25px !important; width: 25px !important;" /></a>
-        @post.Title
-
-        @Html.ActionLink("Edit Post", "Edit", new { ID = post.ID })
-        @Html.ActionLink("View Post", "ViewBlog", new { ID = post.ID })
+    <div id="uxFilter" >    
+        <input id="uxFilterTextBox" type="text" name="filter" />
+        <input id="uxFilterSubmit" type="submit" placeholder="Filter.."/>
     </div>
-}*@
-@Html.Partial("_BlogPostLinkList")
+}
+
+@Html.Partial("_BlogPostLinkList", Model)

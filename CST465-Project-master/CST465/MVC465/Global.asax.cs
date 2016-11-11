@@ -13,6 +13,7 @@ namespace MVC465
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            UnityConfig.RegisterComponents();
         }
     }
 }

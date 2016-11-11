@@ -76,17 +76,28 @@ li {
     color: #3A8DEB;
 }
 
-.uxOpen { visibility: hidden; }
+.uxOpen { 
+    visibility: hidden; 
+    font-size: 30px;
+    cursor: pointer; 
+    position: relative; 
+    top: 0; 
+    left: 0;
+    color: white;
+    background-color: #4C4C4C;
+}
 
 @media only screen and (max-width: 650px) {
   .sidenav {padding-top: 15px;}
   .uxOpen { visibility:visible; }
+   header {background-color: #4C4C4C !important;}
    nav { visibility: hidden; }
    img {width: 100%;}
 }
 @media only screen and (min-width: 650px) {
-    html {background: #A0A1A2;}
-    body { width: 85%;}
+    html {background: #4C4C4C; color: white;}
+    body {width: 85%;}
+    header {background-color: white !important;}
     h1{ font-family: Rockwell; }
     h2{ font-family: Rockwell; }
     h3{ font-family: Rockwell; }
@@ -117,10 +128,66 @@ header {
     height: 45px;
     width: 100%;
 }
+#uxBlogLink {
+    background-color: #3A8DEB;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: auto;
+    text-align:left;
+    text-wrap:normal;
+}
+/*Start Used input Blog Controller*/
+#uxAdd {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}
+#uxAdd:hover {
+    -webkit-filter: drop-shadow(-12px 12px 25px rgba(255,255,255,0.3));
+}
+#uxFilter {
+    position: fixed;
+    left: 35px;
+    bottom: 35px;
+}
+    #uxFilterTextBox {
+        width: 190px;
+        height: 45px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('../Img/filter-results-button.png');
+        background-position: 5px 5px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
 
-
-
-
+    #uxFilterTextBox:focus {
+        opacity: 0.5;
+    }
+    #uxFilterSubmit {
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        height: 45px;
+        background-color: #3A8DEB;
+        color: white;
+        display: inline-block;
+        vertical-align: auto;
+        text-align:left;
+        text-wrap:normal;
+    }
+ /*End Used input Blog Controller*/
 
 
 

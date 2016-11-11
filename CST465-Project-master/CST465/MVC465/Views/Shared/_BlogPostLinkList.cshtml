@@ -1,28 +1,21 @@
 ﻿@model IEnumerable<BlogPost>
 
-<style>
-    a {
-        text-decoration: none;
-        color: #3A8DEB;
-    }
-    button {
-        background-color: #3A8DEB;
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-decoration: none;
-        margin: 4px 2px;
-        cursor: pointer;
-        width: 20%;
-        display: inline-block;
-        vertical-align: middle;
-    }
-</style>
-
 @foreach (BlogPost m in Model)
 {
     <a href="@Url.Action("Edit", new { ID = m.ID })"><img src="~/Img/pencil.png" style="width: 25px !important; width: 25px !important;" /></a>
-    <button  type="button" onclick="location.href='@Url.Action("ViewBlog", new { ID = m.ID })'"> @m.Title</button>
-    <small>@m.Timestamp</small>
+    <button  id="uxBlogLink" type="button" onclick="location.href='@Url.Action("ViewBlog", new { ID = m.ID })'"> @m.Title</button>
+    <small>@m.Timestamp.ToLocalTime()</small>
     <br />
 }
+
+@*@foreach (BlogPost post in Model)
+    {
+        <div style="font-size: 25px;">
+            <a href="@Url.Action("Edit", new { ID = post.ID })"><img src="~/Img/pencil.png" style="width: 25px !important; width: 25px !important;" /></a>
+            <a href="@Url.Action("ViewBlog", new { ID = post.ID })"><img src="~/Img/search-engine.png" style="width: 25px !important; width: 25px !important;" /></a>
+            @post.Title
+
+            @Html.ActionLink("Edit Post", "Edit", new { ID = post.ID })
+            @Html.ActionLink("View Post", "ViewBlog", new { ID = post.ID })
+        </div>
+    }*@

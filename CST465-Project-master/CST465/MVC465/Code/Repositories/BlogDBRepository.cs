@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
-namespace MVC465.Code.Repositories
+namespace MVC465
 {
     public class BlogDBRepository : IDataEntityRepository<BlogPost>
     {

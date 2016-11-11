@@ -10,7 +10,7 @@
 
 <div>
     <h3>@Model.Title</h3><br />
-    <small>@Model.Timestamp</small> @Model.Author:<br />
+    <small>@Model.Timestamp.ToLocalTime()</small> @Model.Author:<br />
     <div>
         @Model.Content
     </div>

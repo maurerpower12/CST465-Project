@@ -15,23 +15,20 @@
     @RenderSection("header", required: false)
     <header class="uxHeader">
         <nav class="uxSideNavUl">
-            
-            @*<li><img src="~/Img/houz.png" height="50" width="50" />@Html.ActionLink("Home", "Index", "Home")</li>*@
             <li><a href="@Url.Action("Index", "Home")"><img src="~/Img/houz.png" style="width: 25px !important; width: 25px !important;" /></a></li>
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
-</nav>
+        </nav>
         <div id="uxSidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position: relative; top: 0; left: 0;">&times;</a>
             <li><a href="@Url.Action("Index", "Home")"><img src="~/Img/houz.png" height="30" width="50" style="width:30px !important;"/></a></li>
             <br /><br />
-            @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
         </div>
-        <span style="font-size: 30px; cursor: pointer; position: relative; top: 0; left: 0;" onclick="openNav()" class="uxOpen">&#9776;</span>
+        <span onclick="openNav()" class="uxOpen">&#9776;</span>
 
     </header>
     <div>

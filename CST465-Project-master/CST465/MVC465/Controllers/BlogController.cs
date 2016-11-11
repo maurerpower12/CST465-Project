@@ -1,20 +1,34 @@
-﻿using MVC465.Code.Repositories;
+﻿//using MVC465.Code.Repositories;
+using MVC465.Code.ExtensionMethods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVC465.Controllers
+namespace MVC465.Controllers 
 {
     public class BlogController : Controller
     {
         private IDataEntityRepository<BlogPost> data;
 
+        public BlogController(IDataEntityRepository<BlogPost> repo)
+        {
+            data = repo;
+        }
+
         public ActionResult Index()
         {
             List<BlogPost> blogz;
             blogz = data.GetList();
+            return View(blogz);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string filter)
+        {
+            List<BlogPost> blogz;
+            blogz = data.GetListByContent(filter);
             return View(blogz);
         }
 
