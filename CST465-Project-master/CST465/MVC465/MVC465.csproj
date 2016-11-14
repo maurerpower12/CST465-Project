@@ -148,10 +148,16 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MidtermController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Blog\BlogPostModel.cs" />
+    <Compile Include="Models\Midterm\LongAnswerQuestion.cs" />
+    <Compile Include="Models\Midterm\MultipleChoiceQuestion.cs" />
+    <Compile Include="Models\Midterm\ShortAnswerQuestion.cs" />
+    <Compile Include="Models\Midterm\TestQuestion.cs" />
+    <Compile Include="Models\Midterm\TrueFalseQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +179,14 @@
     <Content Include="Views\Blog\DisplayTemplates\BlogPost.cshtml" />
     <Content Include="Views\Blog\ViewBlog.cshtml" />
     <Content Include="App_Data\data.json" />
+    <Content Include="JSON\Midterm.json" />
+    <Content Include="Views\Midterm\TakeTest.cshtml" />
+    <Content Include="Views\Midterm\DisplayResults.cshtml" />
+    <Content Include="Views\Midterm\Index.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\LongAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\MultipleChoiceQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\ShortAnswerQuestion.cshtml" />
+    <Content Include="Views\Midterm\EditorTemplates\TrueFalseQuestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

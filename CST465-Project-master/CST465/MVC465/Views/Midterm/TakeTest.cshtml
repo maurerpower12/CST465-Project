@@ -1,0 +1,26 @@
+﻿@model List<TestQuestion>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Take Test";
+}
+
+<h1>Take Test</h1>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>Total Questions: @Model.Count</p>
+    for (int i = 0; i < Model.Count; i++)
+    {
+        <p>
+            @i .
+            @Html.EditorFor(m => Model[i])
+            <br />
+        </p>
+    }
+
+    <input type="submit" id="uxSubmit" />
+}
+
+
+

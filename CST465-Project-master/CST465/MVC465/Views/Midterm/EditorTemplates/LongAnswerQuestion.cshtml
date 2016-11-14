@@ -1,0 +1,13 @@
+﻿@model LongAnswerQuestion
+<div >
+    <div  >
+        <h2> Long Answer</h2>
+        <h2>
+            @Html.Raw(Model.Question)<br />
+            @Html.HiddenFor(m => Model.ID)
+        </h2>
+            @Html.TextAreaFor(m => Model.Answer)
+        <br />
+        <div>@Html.ValidationMessageFor(m => Model.Answer)</div>
+    </div>
+</div>
