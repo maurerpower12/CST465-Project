@@ -1,0 +1,33 @@
+﻿@model List<string>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Roles";
+}
+
+
+@foreach (var str in Model)
+{
+    <div>@str</div>
+}
+<br />
+<h2>Add a Role</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.TextBox("RoleName")
+   
+    <input type="submit" value="Add Role" class="btn btn-default" />
+
+}
+@using (Html.BeginForm("JoinRole", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.TextBox("RoleName")
+
+    <input type="submit" value="Add Role" class="btn btn-default" />
+
+}
+

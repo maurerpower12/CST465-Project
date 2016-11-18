@@ -11,7 +11,7 @@ namespace MVC465
 {
     public class DBRepo : IDataEntityRepository<BlogPost>
     {
-        static int id = 1;
+       
 
         public BlogPost Get(int id)
         {
@@ -24,7 +24,7 @@ namespace MVC465
 
         public void Save(BlogPost post)
         {
-
+            int id = 1;
             var path = "~/App_Data/data.json";
             List<BlogPost> blogz = GetList();
             string temp;
@@ -36,10 +36,14 @@ namespace MVC465
                 if (blogz == null || blogz.Count == 0)
                 {
                     id = 1;
-                    post.ID = id;
-                    post.Timestamp = DateTime.UtcNow.ToLocalTime();
-                    blogz.Add(post);
                 }
+                else
+                {
+                    id = blogz.Max(m => m.ID) + 1;
+                }
+                post.ID = id;
+                post.Timestamp = DateTime.UtcNow.ToLocalTime();
+                blogz.Add(post);
             }
             else
             {
@@ -51,7 +55,7 @@ namespace MVC465
                 temp2.ID = post.ID;
 
 
-                blogz[offset] = post;
+                //blogz[offset] = post;
             }
 
             temp = js.Serialize(blogz);

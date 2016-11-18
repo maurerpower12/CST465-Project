@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC465.Controllers 
 {
+    [Authorize]
     public class BlogController : Controller
     {
         private IDataEntityRepository<BlogPost> data;
@@ -16,7 +17,7 @@ namespace MVC465.Controllers
         {
             data = repo;
         }
-
+        [Authorize]
         public ActionResult Index()
         {
             List<BlogPost> blogz;
@@ -37,11 +38,14 @@ namespace MVC465.Controllers
             data = new BlogDBRepository();
         }
 
+        [Authorize]
         public ActionResult Add()
         {
             BlogPostModel addme = new BlogPostModel();
             return View(addme);
         }
+
+        [Authorize]
         [HttpPost]
         public ActionResult Add(BlogPostModel model)
         {
@@ -61,7 +65,7 @@ namespace MVC465.Controllers
                 return View(model);
             }
         }
-
+        [Authorize]
         public ActionResult Edit(int id)
         {
             BlogPost editme = data.Get(id);
@@ -69,7 +73,7 @@ namespace MVC465.Controllers
             
             return View(model);
         }
-
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public ActionResult Edit(BlogPostModel model)
         {

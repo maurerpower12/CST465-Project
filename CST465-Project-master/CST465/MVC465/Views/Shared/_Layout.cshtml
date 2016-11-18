@@ -19,6 +19,19 @@
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div style="color: black; float: right;">Welcome, @User.Identity.Name</div><br />
+                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;" style="text-decoration: none; color: black; float: right;">Logout</a>
+                }
+            }
+            else
+            {
+                <li>@Html.ActionLink("Login", "Login", "Account")</li>
+            }
         </nav>
         <div id="uxSidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position: relative; top: 0; left: 0;">&times;</a>
@@ -27,6 +40,21 @@
             <li>@Html.ActionLink("About", "Index", "About")</li>
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div>Welcome, @User.Identity.Name</div>
+                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;" style="text-decoration: none;">Logout</a>
+                }
+            }
+            else
+            {
+                <div id="uxSideRight">
+                    <li style="float: right;">@Html.ActionLink("Login", "Login", "Account")</li>
+                </div>
+            }
         </div>
         <span onclick="openNav()" class="uxOpen">&#9776;</span>
 
