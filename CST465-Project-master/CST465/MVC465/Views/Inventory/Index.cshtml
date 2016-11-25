@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Inventory>
+@using GridMvc.Html
+  
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Inventory";
+}
+
+<br /><br /><br /><br />
+<h1>Inventory</h1>
+<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />  
+<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />  
+<script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>  
+<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>  
+
+
+<a id="uxAdd" href="@Url.Action("Add", "Inventory")"><img src="~/Img/plus.png" /></a>
+@(Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(c => c.ID).Titled("ID").Filterable(true);
+    columns.Add(c => c.ProductCode).Titled("Product Code").Filterable(true);
+    columns.Add(c => c.ProductName).Titled("Product Name").Filterable(true);
+    columns.Add(c => c.ProductDescription).Titled("Product Description").Filterable(false);
+    columns.Add(c => c.Quantity).Titled("Quantity").Filterable(true);
+    columns.Add(c => c.Price).Titled("Price").Filterable(true);
+    columns.Add()
+    .Encoded(false)
+    .Sanitized(false)
+    .SetWidth(55)
+    .RenderValueAs(m => Html.ActionLink("Edit", "Edit", new { index = m.ID }));
+    columns.Add()
+    .Encoded(false)
+    .Sanitized(false)
+    .SetWidth(55)
+    .RenderValueAs(m => Html.ActionLink("Delete", "DeleteMe", new { Cat = m.ID }));
+
+}).WithPaging(10).Sortable(true))

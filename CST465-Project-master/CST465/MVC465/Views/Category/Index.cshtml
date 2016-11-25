@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Category>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories already added</h2>
+@if (Model.Count() != 0)
+    {
+        for(int i=0; i < Model.Count(); i++)
+        {
+            <a href="@Url.Action("DeleteMe", Model.ElementAt(i))"><i class="em em-x"></i></a>
+            <a href="@Url.Action("Edit", Model.ElementAt(i).ID)"><img src="~/Img/pencil.png" style="width: 20px !important; width: 20px !important;" /></a>
+
+                    //Model.ElementAt(i).CategoryName
+            using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationMessage(Model.ElementAt(i).CategoryName)
+                @Html.HiddenFor(m => m.ElementAt(i).ID)
+                @Html.EditorFor(m => m.ElementAt(i).CategoryName)
+
+                <input type="submit" value="Edit Category" class="btn btn-default" id="uxSubmit" style="width: auto" />
+            }
+}
+    }
+else
+    {
+        <p>No categories have been added <i class="em em-angry"></i><i class="em em--1"></i></p>
+    }
+<br />
+<h2>Add a category</h2>
+
+@using (Html.BeginForm("SaveCategory", "Category", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.TextBox("CategoryName")
+        <br/>
+        <input type="submit" value="Add Category" class="btn btn-default" id="uxSubmit" />
+
+    }

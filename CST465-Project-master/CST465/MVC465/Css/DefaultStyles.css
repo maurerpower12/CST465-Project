@@ -95,8 +95,8 @@ li {
    img {width: 100%;}
 }
 @media only screen and (min-width: 650px) {
-    html {background: #4C4C4C; color: white;}
-    body {width: 85%;}
+    html {background: #4C4C4C !important; color: white!important; }
+    body {width: 100%;}
     header {background-color: white !important;}
     h1{ font-family: Rockwell; }
     h2{ font-family: Rockwell; }

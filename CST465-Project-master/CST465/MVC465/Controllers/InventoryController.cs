@@ -1,43 +1,89 @@
-﻿using MVC465.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVC465;
 
 namespace MVC465.Controllers
 {
-    [Authorize]
     public class InventoryController : Controller
     {
-        private IDataEntityRepository<Category> data;
+ 
+        private IDataEntityRepository<Inventory> data;
 
-        public InventoryController(IDataEntityRepository<Category> repo)
+        public InventoryController(IDataEntityRepository<Inventory> repo)
         {
             data = repo;
         }
         // GET: Inventory
-        public ActionResult Categories()
+        public ActionResult Index()
         {
-            List<Category> t = data.GetList();
+            List<Inventory> t = data.GetList();
             return View(t);
         }
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Category(string CategoryName)
+        public ActionResult SaveInventory(Inventory inv)
         {
-            Category n = new Category();
-            n.CategoryName = CategoryName;
-            data.Save(n);
-            return RedirectToAction("Categories");
+            if (ModelState.IsValid)
+            {
+                data.Save(inv);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
 
         }
-        public ActionResult Edit(string CategoryName)
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Inventory Cat)
         {
+            if (ModelState.IsValid)
+            {
+                data.Save(Cat);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
 
-            return RedirectToAction("Categories");
+        }
+        [Authorize]
+        public ActionResult Edit(int index)
+        {
+            return View(data.Get(index));
+        }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(Inventory Cat)
+        {
+            //if (ModelState.IsValid)
+            //{
+                data.Save(Cat);
+                return RedirectToAction("Index");
+            //}
+            //else
+            //{
+            //    return View();
+            //}
+
+        }
+        [Authorize]
+        public ActionResult Add()
+        {
+            return View();
+        }
+        [Authorize]
+        public ActionResult DeleteMe(int Cat)
+        {
+            data.Remove(Cat);
+            return RedirectToAction("Index");
 
         }
         public InventoryController()

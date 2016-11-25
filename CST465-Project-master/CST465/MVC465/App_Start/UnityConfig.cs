@@ -20,7 +20,9 @@ namespace MVC465
 
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IDataEntityRepository<BlogPost>,DBRepo>();
-            container.RegisterType<IDataEntityRepository<Category>, InventoryDBRepository>();
+            container.RegisterType<IDataEntityRepository<Category>, CategoryDBRepository>();
+            container.RegisterType<IDataEntityRepository<Inventory>, InventoryDBRepository>();
+
             container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
             container.RegisterType<UserManager<ApplicationUser>>(new HierarchicalLifetimeManager());
             container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new HierarchicalLifetimeManager());

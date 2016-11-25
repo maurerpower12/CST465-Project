@@ -84,5 +84,10 @@ namespace MVC465
             data.Close();
             return blogz;
         }
+
+        public void Remove(int iD)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,0 +1,16 @@
+﻿
+@model Inventory
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add Inventory";
+}
+<h1>Add Inventory</h1>
+@using (Html.BeginForm("Add", "Inventory", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @Html.EditorForModel()
+    <input type="submit" value="Add Inventory Item" class="btn btn-default" id="uxSubmit" style="width: auto" />
+
+}

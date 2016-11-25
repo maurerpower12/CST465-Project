@@ -104,5 +104,10 @@ namespace MVC465
                 return blogs;
             }
         }
+
+        public void Remove(int iD)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
