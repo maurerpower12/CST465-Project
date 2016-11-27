@@ -3,40 +3,76 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Categories";
 }
+<style>
+    .card-columns {
+        column-count: 1;
+    }
 
+    .center-block {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+<br /><br /><br />
 <h2>Categories already added</h2>
+
 @if (Model.Count() != 0)
-    {
-        for(int i=0; i < Model.Count(); i++)
-        {
-            <a href="@Url.Action("DeleteMe", Model.ElementAt(i))"><i class="em em-x"></i></a>
-            <a href="@Url.Action("Edit", Model.ElementAt(i).ID)"><img src="~/Img/pencil.png" style="width: 20px !important; width: 20px !important;" /></a>
+{
+    <div class="card-columns">
+        <div class="card-deck">
 
-                    //Model.ElementAt(i).CategoryName
-            using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+            <div class="card card-inverse card-primary text-xs-center center-block text-center" style="width: 25%;">
+                <div class="card-block" >
+                    <blockquote class="card-blockquote">
+                        <p>Note deleting a category will delete all inventory items in the category</p>
+                    </blockquote>
+                </div>
+            </div>
+
+            @for (int i = 0; i < Model.Count(); i++)
             {
-                @Html.AntiForgeryToken()
-                @Html.ValidationMessage(Model.ElementAt(i).CategoryName)
-                @Html.HiddenFor(m => m.ElementAt(i).ID)
-                @Html.EditorFor(m => m.ElementAt(i).CategoryName)
+                <div class="card center-block text-center" style="width: 25%; background-color: #e5e5e5; border: 3px solid white; padding-left: 0.00005em;">
+                    <div class="card-block">
+                        @*<a href="@Url.Action("DeleteMe", Model.ElementAt(i))"><i class="em em-x"></i></a>*@
+                        @using (Html.BeginForm("Edit", "Category", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationMessage(Model.ElementAt(i).CategoryName)
+                            @Html.HiddenFor(m => m.ElementAt(i).ID)
+                            @Html.EditorFor(m => m.ElementAt(i).CategoryName)
 
-                <input type="submit" value="Edit Category" class="btn btn-default" id="uxSubmit" style="width: auto" />
+                            <input type="submit" value="Edit Category" class="btn btn-warning" style="width: 195px;" />
+                        }
+                        <input type="button" value="Delete Category" class="btn btn-danger" style="width: 195px" onclick="location.href='@Url.Action("DeleteMe", Model.ElementAt(i))'" />
+
+                    </div>
+                </div>
             }
+        </div>
+    </div>
 }
-    }
+
 else
-    {
-        <p>No categories have been added <i class="em em-angry"></i><i class="em em--1"></i></p>
-    }
-<br />
-<h2>Add a category</h2>
+{
+<p>No categories have been added <i class="em em-angry"></i><i class="em em--1"></i></p>
+}
 
-@using (Html.BeginForm("SaveCategory", "Category", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
 
-        @Html.TextBox("CategoryName")
-        <br/>
-        <input type="submit" value="Add Category" class="btn btn-default" id="uxSubmit" />
+        <div class="card card-inverse text-xs-center center-block text-center" style="width: 25%;background-color: #e5e5e5;">
+            <div class="card-block" >
+                @using (Html.BeginForm("SaveCategory", "Category", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
 
-    }
+                    @Html.TextBox("CategoryName")
+                    <input type="submit" value="Add Category" class="btn btn-success" />
+                    <br /><br />
+                }
+            </div>
+        </div>
+<br /><br />

@@ -1,0 +1,44 @@
+﻿@model Inventory
+
+<div>
+    <div class="uxHiddenID">
+        @Html.LabelFor(m => m.ID) <br />
+        @Html.EditorFor(m => m.ID, new { @class = "form-control" }) <br />
+    </div>
+    <div class="uxEditProdcutCode">
+        @Html.LabelFor(m => m.ProductCode) <br />
+        @Html.EditorFor(m => m.ProductCode, new { @class = "form-control" }) <br />
+        @Html.ValidationMessageFor(m => m.ProductCode)
+    </div>
+    <div class="uxEditProdcutName">
+        @Html.LabelFor(m => m.ProductName) <br />
+        @Html.EditorFor(m => m.ProductName, new { @class = "form-control" }) <br />
+        @Html.ValidationMessageFor(m => m.ProductName)
+    </div>
+    <div class="uxEditProductDescription">
+        @Html.LabelFor(m => m.ProductDescription) <br />
+        @Html.EditorFor(m => m.ProductDescription, new { @class = "form-control" }) <br />
+        @Html.ValidationMessageFor(m => m.ProductDescription)
+    </div>
+
+    <div class="uxEditPrice">
+        @Html.LabelFor(m => m.Price) <br />
+        @Html.EditorFor(m => m.Price, new { @class = "form-control" }) <br />
+        @Html.ValidationMessageFor(m => m.Price)
+    </div>
+
+    <div class="uxEditQuantity">
+
+        @Html.LabelFor(m => m.Quantity) <br />
+        @Html.EditorFor(m => m.Quantity, new { @class = "form-control" }) <br />
+        @Html.ValidationMessageFor(m => m.Quantity)
+    </div>
+
+    <div class="uxEditCategory">
+        @Html.LabelFor(m => m.CategoryID) <br />
+        @Html.DropDownListFor(m => Model.CategoryID,
+                new SelectList(new CategoryDBRepository().GetList(), "ID", "CategoryName"),
+                new { @class = "form-control", style = "width:auto !important;" })
+        @Html.ValidationMessageFor(m => m.CategoryID)
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿
+@model Inventory
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "View Inventory Item";
+}
+<br /><br /><br />
+<div>
+    <div class="uxHiddenID">
+        <h3>@Html.LabelFor(m => m.ID)</h3>
+        @Html.DisplayFor(m => m.ID) <br />
+    </div>
+    <div class="uxEditProdcutCode">
+        <h3>@Html.LabelFor(m => m.ProductCode)</h3>
+        @Html.DisplayFor(m => m.ProductCode) <br />
+    </div>
+    <div class="uxEditProdcutName">
+        <h3>@Html.LabelFor(m => m.ProductName)</h3>
+        @Html.DisplayFor(m => m.ProductName) <br />
+    </div>
+    <div class="uxEditProductDescription">
+        <h3>@Html.LabelFor(m => m.ProductDescription)</h3>
+        @Html.DisplayFor(m => m.ProductDescription) <br />
+    </div>
+
+    <div class="uxEditPrice">
+        <h3> @Html.LabelFor(m => m.Price)</h3>
+        @Html.DisplayFor(m => m.Price) <br />
+    </div>
+
+    <div class="uxEditQuantity">
+        <h3>@Html.LabelFor(m => m.Quantity) </h3>
+        @Html.DisplayFor(m => m.Quantity) <br />
+    </div>
+
+    <div class="uxEditCategory">
+        <h3>@Html.LabelFor(m => m.CategoryID) </h3>
+        @Html.DisplayFor(m => Model.CategoryID)
+    </div>
+
+    <div class="uxEditProductImage">
+        <h3>@Html.LabelFor(m => m.ProductImage)</h3>
+
+        <img src='@Url.Action("Show", "Image", new { id = Model.ID })' alt="@Model.ProductImage.FileName" />
+    </div>
+
+    <br /><br />
+</div>

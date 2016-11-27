@@ -7,10 +7,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/img/house.ico" />
     <title>@ViewBag.Title</title>
 
     <link href="~/Css/DefaultStyles.css" rel="stylesheet" />
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    @*<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
 </head>
 <body id="uxMain">
     @RenderSection("header", required: false)

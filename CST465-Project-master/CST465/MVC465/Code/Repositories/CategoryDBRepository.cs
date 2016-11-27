@@ -43,6 +43,16 @@ namespace MVC465
         {
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
             {
+                InventoryDBRepository inv = new InventoryDBRepository();
+                List<Inventory> ti = inv.GetList();
+
+                foreach (Inventory t in ti) // Remove each of the itmes before removing the category
+                {
+                    if(t.CategoryID == id)
+                    {
+                        inv.Remove(t.ID);
+                    }
+                }
 
                 //Perform your database operations
                 //Initialize the connection object

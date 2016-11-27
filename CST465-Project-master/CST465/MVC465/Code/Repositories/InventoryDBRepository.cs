@@ -15,6 +15,7 @@ namespace MVC465
         public Inventory Get(int id)
         {
             Inventory cat = new Inventory();
+            cat.ProductImage = new Code.Image();
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
             {
 
@@ -35,7 +36,7 @@ namespace MVC465
                         cat.ID = (int)reader["ID"];
                         cat.ProductName = reader["ProductName"].ToString();
                         cat.ProductDescription = reader["ProductDescription"].ToString();
-                        cat.ProductImage = reader["ProductImage"].ToString();
+                        cat.ProductImage.FileData = (byte[])reader["ProductImage"];
                         cat.ProductCode = reader["ProductCode"].ToString();
                         cat.Price = (decimal)reader["Price"];
                         cat.CategoryID = (int)reader["CategoryID"];
@@ -79,12 +80,12 @@ namespace MVC465
                     command.Connection = connection;
                     if (post.ID == 0)
                     {
-                        command.CommandText = "INSERT INTO Product(ProductName,ProductCode,ProductDescription,Price,Quantity, CategoryID) VALUES(@ProductName, @ProductCode, @ProductDescription, @Price, @Quantity, @CategoryID)";
+                        command.CommandText = "INSERT INTO Product(ProductName,ProductCode,ProductDescription,Price,Quantity,CategoryID) VALUES(@ProductName, @ProductCode, @ProductDescription, @Price, @Quantity, @CategoryID);";
 
                     }
                     else
                     {
-                        command.CommandText = "UPDATE Product SET ProductName=@ProductName, ProductCode=@ProductCode, ProductDescription=@ProductDescription, Price=@Price, Quantity=@Quantity, CategoryID=@CategoryID WHERE ID=@ID";
+                        command.CommandText = "UPDATE Product SET ProductName=@ProductName, ProductCode=@ProductCode, ProductDescription=@ProductDescription, Price=@Price, Quantity=@Quantity, CategoryID=@CategoryID WHERE ID=@ID;";
                         command.Parameters.AddWithValue("@ID", post.ID);
 
                     }
@@ -93,12 +94,37 @@ namespace MVC465
                     command.Parameters.AddWithValue("@ProductDescription", post.ProductDescription);
                     command.Parameters.AddWithValue("@Price", post.Price);
                     command.Parameters.AddWithValue("@Quantity", post.Quantity);
-                    //command.Parameters.AddWithValue("@ProductImage", null);
                     command.Parameters.AddWithValue("@CategoryID", post.CategoryID);
 
 
                     command.Connection.Open();
                     command.ExecuteNonQuery();
+
+                    //ImageDBRepository t = new ImageDBRepository();
+                    //post.ProductImage = new Code.Image();
+                    //post.ProductImage.ID = post.ID;
+
+
+                    //t.Save(post.ProductImage);
+
+                    //using (SqlConnection connection2 = new SqlConnection(ConfigurationManager.ConnectionStrings["Aura"].ConnectionString))
+                    //{
+                    //    using (SqlCommand command2 = new SqlCommand())
+                    //    {
+                    //        command2.Connection = connection2;
+
+                    //        command.CommandText = "UPDATE Product SET ProductImage=@ProductImage WHERE ID=@ID";
+                    //        command.Parameters.AddWithValue("@ID", post.ProductImage.ID);
+
+ 
+                    //        if (post.ProductImage.FileData != null)
+                    //            command.Parameters.AddWithValue("@ProductImage", post.ProductImage.FileData);
+
+
+                    //        command2.Connection.Open();
+                    //        command2.ExecuteNonQuery();
+                    //    }
+                    //}
                 }
             }
         }
@@ -126,10 +152,11 @@ namespace MVC465
                             if (reader.HasRows)
                             {
                                 Inventory juanc = new Inventory();
+                                juanc.ProductImage = new Code.Image();
                                 juanc.ID = (int)reader["ID"];
                                 juanc.ProductName = reader["ProductName"].ToString();
                                 juanc.ProductDescription = reader["ProductDescription"].ToString();
-                                juanc.ProductImage = reader["ProductImage"].ToString();
+                                juanc.ProductImage.FileData = (byte[])reader["ProductImage"];
                                 juanc.ProductCode = reader["ProductCode"].ToString();
                                 juanc.Price = (decimal)reader["Price"];
                                 juanc.CategoryID = (int)(reader["CategoryID"]);
@@ -142,5 +169,6 @@ namespace MVC465
                 return cats;
             }
         }
+
     }
 }

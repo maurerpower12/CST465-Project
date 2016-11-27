@@ -21,6 +21,13 @@ namespace MVC465.Controllers
             List<Inventory> t = data.GetList();
             return View(t);
         }
+
+        public ActionResult Item(int Cat)
+        {
+            Inventory t = data.Get(Cat);
+            return View(t);
+        }
+
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -29,7 +36,7 @@ namespace MVC465.Controllers
             if (ModelState.IsValid)
             {
                 data.Save(inv);
-                return RedirectToAction("Index");
+                return RedirectToAction("Image"); // not index
             }
             else
             {
@@ -63,15 +70,17 @@ namespace MVC465.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(Inventory Cat)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 data.Save(Cat);
-                return RedirectToAction("Index");
-            //}
-            //else
-            //{
-            //    return View();
-            //}
+                //return RedirectToAction("Index");
+                return View("Image");
+
+            }
+            else
+            {
+                return View();
+            }
 
         }
         [Authorize]
@@ -86,6 +95,7 @@ namespace MVC465.Controllers
             return RedirectToAction("Index");
 
         }
+
         public InventoryController()
         {
             data = new InventoryDBRepository();

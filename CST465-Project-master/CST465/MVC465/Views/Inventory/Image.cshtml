@@ -1,0 +1,46 @@
+﻿@model Inventory
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add Inventory Item";
+}
+<br /><br /><br />
+<h1>Add Image for the Inventory Item</h1>
+@using (Html.BeginForm("Add", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="uxHiddenID">
+        @Html.HiddenFor(m => m.ID) <br />
+    </div>
+    <div class="uxEditProdcutCode">
+        @Html.HiddenFor(m => m.ProductCode) <br />
+        @Html.ValidationMessageFor(m => m.ProductCode)
+    </div>
+    <div class="uxEditProdcutName">
+        @Html.HiddenFor(m => m.ProductName) <br />
+        @Html.ValidationMessageFor(m => m.ProductName)
+    </div>
+    <div class="uxEditProductDescription">
+        @Html.HiddenFor(m => m.ProductDescription) <br />
+        @Html.ValidationMessageFor(m => m.ProductDescription)
+    </div>
+
+    <div class="uxEditPrice">
+        @Html.HiddenFor(m => m.Price) <br />
+        @Html.ValidationMessageFor(m => m.Price)
+    </div>
+
+    <div class="uxEditQuantity">
+        @Html.HiddenFor(m => m.Quantity) <br />
+        @Html.ValidationMessageFor(m => m.Quantity)
+    </div>
+
+    <div class="uxEditCategory">
+        @Html.HiddenFor(m => Model.CategoryID)
+        @Html.ValidationMessageFor(m => m.CategoryID)
+    </div>
+
+    <div class="uxEditProductImage">
+        @Html.LabelFor(m => m.ProductImage) <br />
+        <input type="file" name="SampleImage" />
+        <button type="submit" class="btn btn-danger">Save Image</button>
+    </div>
+}

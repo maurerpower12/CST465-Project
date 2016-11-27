@@ -4,12 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Edit Inventory Item";
 }
-<br />
+<br /><br /><br />
 <h1>Edit Inventory item</h1>
 @using (Html.BeginForm("Edit", "Inventory", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
     @Html.EditorForModel()
-    <input type="submit" value="Edit Category" class="btn btn-default" id="uxSubmit" style="width:auto"/>
+    <input type="submit" value="Edit Category" class="btn btn-primary" />
 }

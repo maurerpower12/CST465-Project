@@ -7,44 +7,48 @@
 @*This will be a prettier editor for your blog post*@
 
 @model BlogPostModel
-    <style>
-        
-        .uxEditTitle input[type="text"] {
-            width: 50%; 
-            padding: 12px 20px; 
-            box-sizing: border-box;
-            text-align: left !important;
-            background-color: #f8f8f8;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            display:inline-block; vertical-align:middle;
-        }
-         #Author{
-            width: 50%; 
-            padding: 12px 20px; 
-            box-sizing: border-box;
-            text-align: left !important;
-            background-color: #f8f8f8;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            display:inline-block; vertical-align:middle;
-        }
-       #Content {
-            width: 50%;
-            height: 150px;
-            margin: 8px;
-            padding: 12px 20px;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            background-color: #f8f8f8;
-            resize: none;
-            text-align: left !important;
-            display:inline-block; vertical-align:middle;
-        }
-    </style>
+<style>
+    .uxEditTitle input[type="text"] {
+        width: 50%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        text-align: left !important;
+        background-color: #f8f8f8;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .uxEditAuthor input[type="text"] {
+        width: 50%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        text-align: left !important;
+        background-color: #f8f8f8;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .uxEditContent input[type="text"] {
+        width: 50%;
+        height: 150px;
+        margin: 8px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+        text-align: left !important;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
 <div style="">
-    <div class="uxEditTitle" >
+    <div class="uxEditTitle">
         @Html.LabelFor(m => m.Title) <br />
         @Html.EditorFor(m => m.Title) <br />
         @Html.ValidationMessageFor(m => m.Title)

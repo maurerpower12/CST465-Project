@@ -178,6 +178,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Img\filter-results-button.png" />
+    <Content Include="Img\house.ico" />
     <Content Include="Img\houz.png" />
     <Content Include="Img\pencil.png" />
     <Content Include="Img\plus.png" />
@@ -212,11 +213,13 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
+    <Compile Include="Code\Image.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
     <Compile Include="Code\Interfaces\IDataEntityRepository.cs" />
     <Compile Include="Code\Repositories\CategoryDBRepository.cs" />
     <Compile Include="Code\Repositories\Inventory.cs" />
     <Compile Include="Code\Repositories\Category.cs" />
+    <Compile Include="Code\Repositories\ImageDBRepository.cs" />
     <Compile Include="Code\Repositories\InventoryDBRepository.cs" />
     <Compile Include="Code\Repositories\DBRepo.cs" />
     <Compile Include="Code\Repositories\BlogDBRepository.cs" />
@@ -228,6 +231,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\MidtermController.cs" />
     <Compile Include="Global.asax.cs">
@@ -242,6 +246,7 @@
     <Compile Include="Models\Identity\ApplicationDBContext.cs" />
     <Compile Include="Models\Identity\ApplicationRole.cs" />
     <Compile Include="Models\Identity\ApplicationUser.cs" />
+    <Compile Include="Models\Image\ImageModel.cs" />
     <Compile Include="Models\Midterm\LongAnswerQuestion.cs" />
     <Compile Include="Models\Midterm\MultipleChoiceQuestion.cs" />
     <Compile Include="Models\Midterm\ShortAnswerQuestion.cs" />
@@ -302,6 +307,11 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Inventory\Add.cshtml" />
     <Content Include="Views\Inventory\Edit.cshtml" />
+    <Content Include="Views\Inventory\EditorTemplates\Inventory.cshtml" />
+    <Content Include="Views\Inventory\Image.cshtml" />
+    <Content Include="Views\Inventory\Item.cshtml" />
+    <Content Include="Views\Inventory\DisplayTemplates\ProductImage.cshtml" />
+    <Content Include="Views\Shared\_ProductImage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -312,6 +322,7 @@
   <ItemGroup>
     <Folder Include="Code\DataObjects\" />
     <Folder Include="JS\" />
+    <Folder Include="Views\Image\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

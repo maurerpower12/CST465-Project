@@ -1,0 +1,6 @@
+﻿@model MVC465.Code.Image
+
+<p>Image index</p>
+<img src='@Url.Action( "Show", "id", new { id = Model.ID } )' />
+<img class="thumbnail" src='@Url.Action("Show", new { @id = Model.ID })' alt="@Model.FileName" />
+<h2>@Model.FileName</h2>
