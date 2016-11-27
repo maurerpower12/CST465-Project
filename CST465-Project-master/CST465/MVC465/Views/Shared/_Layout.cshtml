@@ -25,6 +25,7 @@
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
             <li>@Html.ActionLink("Inventory", "Index", "Inventory")</li>
+            <li>@Html.ActionLink("Category", "Index", "Category")</li>
             @if (User.Identity.IsAuthenticated)
             {
                 <div style="color: black; float: right;">Welcome, @User.Identity.Name</div><br />
@@ -47,6 +48,7 @@
             <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
             <li>@Html.ActionLink("Inventory", "Index", "Inventory")</li>
+            <li>@Html.ActionLink("Category", "Index", "Category")</li>
             @if (User.Identity.IsAuthenticated)
             {
                 <div>Welcome, @User.Identity.Name</div>

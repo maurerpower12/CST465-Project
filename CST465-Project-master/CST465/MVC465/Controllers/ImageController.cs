@@ -44,36 +44,31 @@ namespace MVC465.Controllers
             }
             else
             {
-                if (imageModel.SampleImage != null && imageModel.SampleImage.ContentLength < 5000)
+                if (imageModel.SampleImage != null )
                 {
-                    Image image = new Image();
-                    image.ID = imageModel.ID;
-                    byte[] imageBytes;
-
-                    using (var memoryStream = new MemoryStream())
+                    if (imageModel.SampleImage.ContentLength < 5000)
                     {
-                        imageModel.SampleImage.InputStream.CopyTo(memoryStream);
-                        imageBytes = memoryStream.ToArray();
+                        Image image = new Image();
+                        image.ID = imageModel.ID;
+                        byte[] imageBytes;
+
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            imageModel.SampleImage.InputStream.CopyTo(memoryStream);
+                            imageBytes = memoryStream.ToArray();
+                        }
+                        image.FileData = imageBytes;
+                        image.FileName = imageModel.SampleImage.FileName;
+                        image.ContentType = imageModel.SampleImage.ContentType;
+                        _Repo.Save(image);
                     }
-                    image.FileData = imageBytes;
-                    image.FileName = imageModel.SampleImage.FileName;
-                    image.ContentType = imageModel.SampleImage.ContentType;
-                    _Repo.Save(image);
+                    else
+                    {
+                        throw new Exception("Image too big.");
+                    }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Inventory");
             }
-        }
-        public ActionResult BadImages()
-        {
-            return View();
-        }
-        public ActionResult GoodImages()
-        {
-            return View();
-        }
-        public ActionResult BackgroundImage()
-        {
-            return View();
         }
     }
 }

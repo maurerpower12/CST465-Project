@@ -56,3 +56,4 @@
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\bin\System.Web.Mvc.xml
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.dll
 \\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.pdb
+\\Mac\Home\Documents\CST465-Project\CST465-Project-master\CST465\MVC465\obj\Debug\MVC465.csprojResolveAssemblyReference.cache
