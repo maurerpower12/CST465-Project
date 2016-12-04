@@ -14,7 +14,7 @@
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     @*<link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body id="uxMain">
     @RenderSection("header", required: false)
@@ -41,7 +41,7 @@
             }
         </nav>
         <div id="uxSidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position: relative; top: 0; left: 0;">&times;</a>
+            <a href="javascript:void(0)" id="uxCloseBtn" class="closebtn" style="position: relative; top: 0; left: 0;">&times;</a>
             <li><a href="@Url.Action("Index", "Home")"><img src="~/Img/houz.png" height="30" width="50" style="width:30px !important;"/></a></li>
             <br /><br />
             <li>@Html.ActionLink("About", "Index", "About")</li>
@@ -49,37 +49,53 @@
             <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
             <li>@Html.ActionLink("Inventory", "Index", "Inventory")</li>
             <li>@Html.ActionLink("Category", "Index", "Category")</li>
+
             @if (User.Identity.IsAuthenticated)
-            {
-                <div>Welcome, @User.Identity.Name</div>
-                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
-                {
+            { 
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm" }))
+                    {
                     @Html.AntiForgeryToken()
-                    <a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;" style="text-decoration: none;">Logout</a>
-                }
-            }
+                    <li><a href="Logout" onclick="document.getElementById('logoutForm').submit(); return false;" style="text-decoration: none;">Logout</a></li>
+                        }
+                        <div style="color: white; display: inline;">
+                            <div style="position: absolute; bottom: 0; left: 0;">Welcome, @User.Identity.Name</div>
+                        </div>
+                        }
             else
             {
-                <div id="uxSideRight">
-                    <li style="float: right;">@Html.ActionLink("Login", "Login", "Account")</li>
-                </div>
+                    <div id="uxSideRight">
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    </div>
             }
         </div>
-        <span onclick="openNav()" class="uxOpen">&#9776;</span>
+        <span id="uxOpenNav" class="uxOpen">&#9776;</span>
 
     </header>
     <div>
+        <script type="text/javascript">
+            //function openNav() {
+            //    //document.getElementById("uxSidenav").style.width = "250px";
+            //    //document.getElementById("uxMain").style.marginLeft = "250px";
+            //}
+            //function closeNav() {
+            //    document.getElementById("uxSidenav").style.width = "0px";
+            //    document.getElementById("uxMain").style.marginLeft = "0px";
+            //}
+            $(document).ready(function () {
 
-        <script>
-            function openNav() {
-                document.getElementById("uxSidenav").style.width = "250px";
-                document.getElementById("uxMain").style.marginLeft = "250px";
-            }
+                $("#uxCloseBtn").click(function () {
+                    //alert("Close!");
+                    $("#uxSidenav").hide().css("width", "0px");
+                    $("#uxMain").css("backgroundColor", "white");
+                });
 
-            function closeNav() {
-                document.getElementById("uxSidenav").style.width = "0px";
-                document.getElementById("uxMain").style.marginLeft = "0px";
-            }
+                $("#uxOpenNav").click(function () {
+                    //alert("open!")
+                    $("#uxSidenav").show();
+                    $("#uxSidenav").css("width", "250px");
+                    $("body").css("backgroundColor", "rgba(0,0,0,0.6)");
+                });
+            });
         </script>
     </div>
 

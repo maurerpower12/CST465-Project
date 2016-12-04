@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Inventory>
+
+<div class="card " style="width:45%; border: 2px solid grey;">
+    <div class="card-header">
+        <h3>Inventory Items</h3>
+    </div>
+    <div class="card-block">
+
+        @foreach (Inventory m in Model)
+        {
+
+              <div>@m.ProductName</div>  
+              <br />
+        }
+
+    </div>
+</div>
+

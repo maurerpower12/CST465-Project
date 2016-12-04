@@ -1,0 +1,18 @@
+﻿@model IEnumerable<BlogPost>
+
+<div class="card "  style="width:45%; border: 2px solid grey;">
+    <div class="card-header">
+        <h3>Most Recent Blog Posts</h3>
+     </div>
+        <div class="card-block">
+            
+            @foreach (BlogPost m in Model)
+            {
+                string temp = "ViewBlog/";
+                temp += m.ID;
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action(temp, "Blog" )'"> @m.Title</button>
+                <br />
+            }
+
+        </div>
+    </div>

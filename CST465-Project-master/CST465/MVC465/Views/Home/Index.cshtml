@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Collections.Generic
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home";
@@ -13,9 +13,41 @@
 <h1>Welcome home</h1>
 <img src="http://www.oit.edu/images/default-source/housing-and-residence-life-images/main-page-rotator/housing1.jpg?sfvrsn=2" />
 
-<div class="uxContent" >
+<div class="uxContent">
+    <form>
+        <p>Subscribe to our newsletter?</p>
+        <select class="target">
+            <option value="yes">Yes Please!</option>
+            <option value="no">No Thank You</option>
+        </select>
+    </form>
+    <br /><br /><br />
+    <p id="uxEditProfile">Edit Profile</p>
 
 </div>
+<script>
+    $(".target").change(function () {
+        var selected = $('.target').val();
+        if ( selected == "yes") {
+            alert("Thank you for subscribing to our newsletter!");
+        }
+        else {
+            alert("Oh.... Okay. I'm sorry. Come again soon.");
+        }
+    });
+
+
+
+    $("#uxEditProfile").hover(function () {
+        $(this).css("color", "red");
+    });
+    $("#uxEditProfile").click(function () {
+        console.log("Link was clicked: " + $(this).text());
+        $(this).toggle();
+    });
+</script>
+@Html.Partial("_HomeBlogPreview", (IEnumerable<BlogPost>)ViewBag.BlogPreview)
+@Html.Partial("_HomeInventory", (IEnumerable<Inventory>)ViewBag.InventoryPreview)
 
 @section footer {
     @*<p> footer</p>*@

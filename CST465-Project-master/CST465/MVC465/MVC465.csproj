@@ -212,6 +212,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Models\Contact\Contact.cs" />
     <Compile Include="Code\ExtensionMethods\BlogRepositoryExtensions.cs" />
     <Compile Include="Code\Image.cs" />
     <Compile Include="Code\Interfaces\IDataEntity.cs" />
@@ -311,7 +312,10 @@
     <Content Include="Views\Inventory\Image.cshtml" />
     <Content Include="Views\Inventory\Item.cshtml" />
     <Content Include="Views\Inventory\DisplayTemplates\ProductImage.cshtml" />
-    <Content Include="Views\Shared\_ProductImage.cshtml" />
+    <Content Include="Views\Shared\_HomeBlogPreview.cshtml" />
+    <Content Include="Views\Shared\_HomeInventory.cshtml" />
+    <Content Include="Views\Contact\Success.cshtml" />
+    <Content Include="Views\Contact\EditorTemplates\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,8 +5,11 @@
 body {
     margin-top: 55px;
     transition: 0.3s;
+    margin-top: 15px;
 }
-
+html {
+    margin-top: 62px;
+}
 nav {
     list-style-type: none;
     margin: 0;
@@ -20,6 +23,7 @@ nav {
     right: 0;
 }
 
+
 li {
     float: left;
     list-style-type: none;
@@ -30,7 +34,7 @@ li {
         color: #666;
         text-align: center;
         padding: 14px 16px;
-        text-decoration: none;
+        text-decoration: none !important;
     }
 
         li a:hover:not(.active) {
@@ -67,13 +71,15 @@ li {
     color: #818181;
     display: flex;
     transition: 0.3s;
-    font-size: 36px ! important;
+    font-size: 25px ! important;
     right: 25px ;
     align-content: space-between;
+    line-height: 4.2px;
 }
 
 .sidenav a:hover{
     color: #3A8DEB;
+    text-decoration: none !important;
 }
 
 .uxOpen { 
@@ -93,9 +99,10 @@ li {
    header {background-color: #4C4C4C !important;}
    nav { visibility: hidden; }
    img {width: 100%;}
+   .card {width: 100% !important; text-align: center !important;}
 }
-@media only screen and (min-width: 650px) {
-    html {background: #4C4C4C !important; color: white!important; }
+@media only screen and (min-width: 651px) {
+    html {background: #4C4C4C !important; color: white !important; }
     body {width: 100%;}
     header {background-color: white !important;}
     h1{ font-family: Rockwell; }
